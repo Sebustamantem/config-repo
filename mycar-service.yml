@@ -1,0 +1,20 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: mycar-service
+  datasource:
+    url: jdbc:mysql://containers-us-west-118.railway.app:3306/railway
+    username: root
+    password: tu_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
