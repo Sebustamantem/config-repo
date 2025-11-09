@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@clientedb_high?TNS_ADMIN=C:/oracle_wallet
+    username: ADMIN
+    password: ClienteDb2025!
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.OracleDialect
