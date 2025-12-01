@@ -1,9 +1,16 @@
+server:
+  port: 0
+
 spring:
+  application:
+    name: gateway-service
+
   cloud:
     gateway:
       routes:
-        - id: auth
+        - id: auth-service
           uri: https://auth-service-o4aa.onrender.com
           predicates:
             - Path=/auth/**
+
 
