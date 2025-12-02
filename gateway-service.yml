@@ -37,7 +37,6 @@ spring:
           predicates:
             - Path=/auth/**
           filters:
-            - StripPrefix=1
             - Retry=3
 
 # ============================
