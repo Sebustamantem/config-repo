@@ -1,5 +1,5 @@
 server:
-  port: 8081   # Puedes usar cualquier puerto local, en Render no importa
+  port: 8081   
 
 spring:
   application:
