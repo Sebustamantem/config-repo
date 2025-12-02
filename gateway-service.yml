@@ -7,10 +7,54 @@ spring:
 
   cloud:
     gateway:
+
+      # ============================
+      # TIMEOUTS ESTABLES PARA RENDER
+      # ============================
+      httpclient:
+        connect-timeout: 20000      # 20s
+        response-timeout: 30s       # 30s
+        pool:
+          type: fixed
+          max-idle-time: 30s
+          max-life-time: 60s
+
+      # ============================
+      # RETRIES (Render corta conexiones)
+      # ============================
+      default-filters:
+        - Retry=3
+        - PreserveHostHeader
+
+      # ============================
+      # RUTAS
+      # ============================
       routes:
+
+        # AUTH SERVICE
         - id: auth-service
           uri: https://auth-service-o4aa.onrender.com
           predicates:
             - Path=/auth/**
+          filters:
+            - StripPrefix=1
+            - Retry=3
 
+# ============================
+# CORS GLOBAL
+# ============================
+  webflux:
+    cors:
+      allowed-origins: "*"
+      allowed-methods: "*"
+      allowed-headers: "*"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      enabled: true
 
