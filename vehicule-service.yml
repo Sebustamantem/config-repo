@@ -6,9 +6,9 @@ spring:
     name: vehicle-service
 
   datasource:
-    url: jdbc:postgresql://ep-floral-math-ahvyc704-pooler.c-3.us-east-1.aws.neon.tech:5432/neondb?sslmode=require
+    url: jdbc:postgresql://ep-bitter-pond-ah7bnjc4-pooler.c-3.us-east-1.aws.neon.tech:5432/neondb?sslmode=require
     username: neondb_owner
-    password: npg_rF6gLTwRd5Va
+    password: npg_PYqdcTzxF13g
     driver-class-name: org.postgresql.Driver
 
   jpa:
