@@ -1,11 +1,10 @@
 server:
   port: 8080
 
-  spring:
+spring:
   application:
     name: expense-service
 
-spring:
   datasource:
     url: jdbc:postgresql://ep-bitter-pond-ah7bnjc4-pooler.c-3.us-east-1.aws.neon.tech:5432/neondb?sslmode=require
     username: neondb_owner
@@ -19,6 +18,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
 management:
   endpoints:
     web:
@@ -27,3 +27,4 @@ management:
   endpoint:
     health:
       show-details: always
+
